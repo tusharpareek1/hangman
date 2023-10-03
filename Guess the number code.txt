@@ -1,0 +1,46 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Guess the number between 0-50");
+        Random obj = new Random();
+        int guess = obj.nextInt(100);
+
+
+        for (int i = 1;  i<= 5; i++)
+        {
+            int number = sc.nextInt();
+
+            if (number==guess)
+            {
+                System.out.println("Correct! you win");
+            }
+            else if (number<guess)
+            {
+                if (i==5) {
+                    System.out.print(" ");
+                }
+                else {
+                    System.out.println("Nope the number is greater.Guess again");
+                }
+            }
+            else if (number>guess)
+            {
+                if (i==5) {
+                    System.out.print(" ");
+                }
+                else {
+                    System.out.println("Nope the number is less than the input value.Guess again");
+                }
+            }
+            if (number==guess) {
+                break;
+            }
+            if (i==5) {
+                System.out.println("Game Finished");
+                System.out.println("The  correct number is "+guess);
+            }
+        }}}
